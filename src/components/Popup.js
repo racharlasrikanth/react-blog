@@ -1,7 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
+import { addNoScrollToBody, removeNoScrollToBody } from '../utils/helper';
 
 const Popup = ({ text, popupHandler }) => {
+
+    useEffect(() => {
+      addNoScrollToBody();
+    
+      return () => {
+        removeNoScrollToBody();
+      };
+    }, []);
+    
+
     return <Wrapper>
         <div className="popup-container">
             <div className="popup">
@@ -20,16 +31,16 @@ const Wrapper = styled.article`
     left: 0;
     z-index: 10;
 
-    ::before{
-        content: '';
-        position: relative;
+    ::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100vh;
-        /* background: var(--clr-black); */
-        background: red;
-        opacity: 1;
+        background: var(--clr-black);
+        opacity: .7;
+        z-index: -1;
     }
 
     .popup-container{

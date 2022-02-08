@@ -38,6 +38,7 @@ Variables
   --clr-grey-9: hsl(212, 33%, 89%);
   --clr-grey-10: hsl(210, 36%, 96%);
   --clr-white: #fff;
+  --clr-black: #222;
   --ff-primary: "Lato", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 2px;
@@ -187,3 +188,6 @@ p {
 Remaining styles
 ===============
 */
+body.no-scroll-body{
+  overflow: hidden;
+}
