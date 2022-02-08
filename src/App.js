@@ -1,9 +1,10 @@
 import React from 'react';
+import BlogCreatePage from './Pages/BlogCreatePage';
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <BlogCreatePage />
     </div>
   );
 }
