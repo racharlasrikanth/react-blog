@@ -1,10 +1,10 @@
 import React from 'react';
-import BlogCreatePage from './Pages/BlogCreatePage';
+import ApplicationRoutes from './Routes/ApplicationRoutes';
 
 function App() {
   return (
     <div className="App">
-      <BlogCreatePage />
+      <ApplicationRoutes />
     </div>
   );
 }
