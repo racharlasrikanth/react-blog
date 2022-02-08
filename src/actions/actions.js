@@ -1,0 +1,7 @@
+// Create Blog Actions
+export const CHANGE_BLOG_TECHNOLOGY = "CHANGE_BLOG_TECHNOLOGY";
+export const CHANGE_BLOG_NAME = "CHANGE_BLOG_NAME";
+export const CHANGE_BLOG_DATA = "CHANGE_BLOG_DATA";
+export const SUBMIT_BLOG_DATA = "SUBMIT_BLOG_DATA"
+export const SHOW_POPUP = "SHOW_POPUP";
+export const HIDE_POPUP = "HIDE_POPUP";

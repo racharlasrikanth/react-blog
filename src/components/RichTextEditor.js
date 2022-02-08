@@ -1,20 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
+// importing context
+import { useCreateBlogContext } from '../context/create_blog_context';
+
 const RichTextEditor = () => {
 
-    const [textEditorData, setTextEditorData] = useState('');
+    // fetch data from context
+    const { changeBlogData,blogData } = useCreateBlogContext();
 
-    return <Wrapper className='text-editor-container section'>
+    return <Wrapper className='text-editor-container'>
         <div className="text-editor-center section-center">
             <CKEditor 
+                className="cke-editor"
                 editor={ClassicEditor}
-                data={textEditorData}
+                data={blogData}
                 onChange={(event, editor) => {
                     let data = editor.getData();
-                    setTextEditorData(data);
+                    changeBlogData(data)
                 }}
             />
         </div>
@@ -22,7 +27,11 @@ const RichTextEditor = () => {
 }
 
 const Wrapper = styled.section`
-
+    .ck.ck-editor__main{
+        .ck-content{
+            min-height: 50vh;
+        }
+    }
 `
 
 export default RichTextEditor;
